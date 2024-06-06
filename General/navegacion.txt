@@ -94,6 +94,14 @@ if _tagName <> "" then
 				plantaR = "ERP 35";
 			elseif planta == "ERP15900" then
 				plantaR = "ERP 36";
+			elseif planta == "ERP15900" then
+				plantaR = "ERP zz";
+			elseif planta == "ERP15900" then
+				plantaR = "ERP zz";
+			elseif planta == "ERP15900" then
+				plantaR = "ERP zz";
+			elseif planta == "ERP15900" then
+				plantaR = "ERP zz";
 			endif;
 		elseif localidad == "03" then
 			localidadR = "Huara\";
