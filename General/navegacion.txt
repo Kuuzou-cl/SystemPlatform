@@ -1,0 +1,287 @@
+dim str as string;
+dim tipo as string;
+dim largo as integer;
+dim server as string;
+dim proceso as string;
+dim procesoR as string;
+dim localidad as string;
+dim localidadR as string;
+dim planta as string;
+dim plantaR as string;
+
+if _tagName <> "" then
+
+	_trendRoute = "";
+
+	largo = _tagName.Length;
+	tipo = _tagName.Substring(largo-5, 5);
+	server = _tagName.Substring(0, 1);
+	proceso = _tagName.Substring(1, 1);
+	localidad = _tagName.Substring(2, 2);
+	planta = _tagName.Substring(4, 6);
+	plantaR = planta;
+
+	if proceso == "1" then
+		procesoR = "Producción\";
+	elseif proceso == "2" then
+		procesoR = "Distribución\";
+	elseif proceso == "3" then
+		procesoR = "Recolección\";
+	elseif proceso == "4" then
+		procesoR = "Depuración\";
+	endif;
+
+	if server == "1" then
+		if localidad == "01" then
+			localidadR = "Alto Hospicio\";			
+		elseif localidad == "02" then
+			localidadR = "Arica\";
+			if planta == "ERP14000" then
+				plantaR = "ERP 00";
+			elseif planta == "ERP14100" then
+				plantaR = "ERP 01";
+			elseif planta == "ERP14200" then
+				plantaR = "ERP 02";
+			elseif planta == "ERP14300" then
+				plantaR = "ERP 03";
+			elseif planta == "ERP14400" then
+				plantaR = "ERP 04";
+			elseif planta == "ERP14500" then
+				plantaR = "ERP 05";
+			elseif planta == "ERP14600" then
+				plantaR = "ERP 07";
+			elseif planta == "ERP14700" then
+				plantaR = "ERP 08";
+			elseif planta == "ERP14800" then
+				plantaR = "ERP 09";
+			elseif planta == "ERP14900" then
+				plantaR = "ERP 10";
+			elseif planta == "ERP19100" then
+				plantaR = "ERP 10N";
+			elseif planta == "ERP15000" then
+				plantaR = "ERP 12";
+			elseif planta == "ERP15100" then
+				plantaR = "ERP 14";
+			elseif planta == "ERP17300" then
+				plantaR = "ERP 15";
+			elseif planta == "ERP16500" then
+				plantaR = "ERP 16";
+			elseif planta == "ERP15200" then
+				plantaR = "ERP 18";
+			elseif planta == "ERP17500" then
+				plantaR = "ERP 19";
+			elseif planta == "ERP15300" then
+				plantaR = "ERP 21";
+			elseif planta == "ERP15400" then
+				plantaR = "ERP 22";
+			elseif planta == "ERP15500" then
+				plantaR = "ERP 23";
+			elseif planta == "ERP15600" then
+				plantaR = "ERP 24";
+			elseif planta == "ERP17900" then
+				plantaR = "ERP 25";
+			elseif planta == "ERP17400" then
+				plantaR = "ERP 26";
+			elseif planta == "ERP15700" then
+				plantaR = "ERP 27";
+			elseif planta == "ERP17800" then
+				plantaR = "ERP 31";
+			elseif planta == "ERP15800" then
+				plantaR = "ERP 32";
+			elseif planta == "ERP17600" then
+				plantaR = "ERP 34";
+			elseif planta == "ERP17700" then
+				plantaR = "ERP 35";
+			elseif planta == "ERP15900" then
+				plantaR = "ERP 36";
+			endif;
+		elseif localidad == "03" then
+			localidadR = "Huara\";
+		elseif localidad == "04" then
+			localidadR = "Iquique\";
+			if planta == "ERP34300" then
+				plantaR = "ERP Rey del mar";
+			elseif planta == "ERP34400" then
+				plantaR = "ERP 35 Proyectada";
+			endif;
+		elseif localidad == "05" then
+			localidadR = "La Huayca\";
+		elseif localidad == "06" then
+			localidadR = "La Tirana\";
+		elseif localidad == "07" then
+			localidadR = "Matilla\";
+		elseif localidad == "08" then
+			localidadR = "Pica\";
+		elseif localidad == "09" then
+			localidadR = "Pisagua\";
+		elseif localidad == "10" then
+			localidadR = "Pozo Almonte\";
+		endif;
+	elseif server == "2" then
+		if localidad == "01" then
+			localidadR = "Angol\";
+			if planta == "EAP004" then
+				plantaR = "PEAP Picoiquén";
+			elseif planta == "TAP003" then
+				plantaR = "PTAP Angol";
+			endif;
+		elseif localidad == "02" then
+			localidadR = "Cajón\";
+		elseif localidad == "03" then
+			localidadR = "Capitán Pastene\";
+		elseif localidad == "04" then
+			localidadR = "Carahue\";
+			if planta == "EAP005" then
+				plantaR = "PEAP Carahue";
+			elseif planta == "TAP004" then
+				plantaR = "PTAP Carahue";
+			endif;
+		elseif localidad == "05" then
+			localidadR = "La Cherquenco\";
+		elseif localidad == "06" then
+			localidadR = "Chol Chol\";
+		elseif localidad == "07" then
+			localidadR = "Collipulli\";
+		elseif localidad == "08" then
+			localidadR = "Cunco\";
+		elseif localidad == "09" then
+			localidadR = "Curacautín\";
+		elseif localidad == "10" then
+			localidadR = "Ercilla\";
+			if planta == "EAP004" then
+				plantaR = "PEAP Ercilla";
+			elseif planta == "TAP003" then
+				plantaR = "PTAP Ercilla";
+			endif;		
+		elseif localidad == "11" then
+			localidadR = "Freire\";
+			if planta == "TAP002" then
+				plantaR = "PTAP Freire";
+			endif;	
+		elseif localidad == "12" then
+			localidadR = "Galvarino\";
+		elseif localidad == "13" then
+			localidadR = "Gorbea\";
+		elseif localidad == "14" then
+			localidadR = "Lastarria\";
+		elseif localidad == "15" then
+			localidadR = "Lautaro\";
+		elseif localidad == "16" then
+			localidadR = "Lican Ray\";
+		elseif localidad == "17" then
+			localidadR = "Loncoche\";
+		elseif localidad == "18" then
+			localidadR = "Lonquimay\";
+		elseif localidad == "19" then
+			localidadR = "Los Sauces\";
+		elseif localidad == "20" then
+			localidadR = "Lumaco\";
+		elseif localidad == "21" then
+			localidadR = "Mininco\";
+		elseif localidad == "22" then
+			localidadR = "Nueva Imperial\";
+		elseif localidad == "23" then
+			localidadR = "Nueva Imperial\";
+		elseif localidad == "24" then
+			localidadR = "Nueva Toltén\";
+		elseif localidad == "25" then
+			localidadR = "Padre Las Casas\";
+			if planta == "TAP018" then
+				plantaR = "PTAP Padre Las Casas";
+			endif;
+		if planta == "TAP004" then
+				plantaR = "PTAPConunhueno";
+				endif;
+				if planta == "EST006" then
+				plantaR = "EstLaVirgen";
+				endif;	
+		elseif localidad == "26" then
+			localidadR = "Pitrufquén\";
+			if planta == "EAP004" then
+				plantaR = "PEAP Pitrufquén";
+			elseif planta == "TAP003" then
+				plantaR = "PTAP Pitrufquén";
+			endif;
+		elseif localidad == "27" then
+			localidadR = "Puerto Saavedra\";
+		elseif localidad == "28" then
+			localidadR = "Pucón\";
+		elseif localidad == "29" then
+			localidadR = "Purén\";
+		elseif localidad == "30" then
+			localidadR = "Quitratue\";
+		elseif localidad == "31" then
+			localidadR = "Renaico\";
+		elseif localidad == "32" then
+			localidadR = "Temuco\";
+			if planta == "TAP025" then
+				plantaR = "PTAP Las Encinas";
+			elseif planta == "SON026" then
+				plantaR = "Sondaje 1648";
+			elseif planta == "SON027" then
+				plantaR = "Sondaje 1649";
+			elseif planta == "SON028" then
+				plantaR = "Sondaje 1651";
+			elseif planta == "SON029" then
+				plantaR = "Sondaje 1652";
+			elseif planta == "SON030" then
+				plantaR = "Sondaje 9018";
+			elseif planta == "SON031" then
+				plantaR = "Sondaje 9019";
+			elseif planta == "SON032" then
+				plantaR = "Sondaje 9020";
+			elseif planta == "SON033" then
+				plantaR = "Sondaje 9021";
+			elseif planta == "SON034" then
+				plantaR = "Sondaje 9023";
+			elseif planta == "SON035" then
+				plantaR = "Sondaje 9037";
+			elseif planta == "SON036" then
+				plantaR = "Sondaje 9038";
+			elseif planta == "SON069" then
+				plantaR = "Sondaje 9069";
+			elseif planta == "SON070" then
+				plantaR = "Sondaje 9091";
+			elseif planta == "SON071" then
+				plantaR = "Sondaje 9084";
+			endif;
+		elseif localidad == "33" then
+			localidadR = "Traiguén\";
+		elseif localidad == "34" then
+			localidadR = "Victoria\";
+			if planta == "EAP003" then
+				plantaR = "PEAP Victoria";
+			elseif planta == "TAP001" then
+				plantaR = "PTAP Victoria";
+			elseif planta == "EST002" then
+				plantaR = "Estanque Victoria";
+			endif;
+		elseif localidad == "35" then
+			localidadR = "Vilcún\";
+		elseif localidad == "36" then
+			localidadR = "Villarrica\";
+		endif;
+	elseif server == "3" then
+		if localidad == "01" then
+			localidadR = "Punta Arenas\";
+		elseif localidad == "02" then
+			localidadR = "Puerto Natales\";
+		elseif localidad == "03" then
+			localidadR = "Porvenir\";
+		endif;
+	elseif server == "4" then
+		
+	endif;
+
+	_trendRoute = procesoR+localidadR+plantaR;
+
+	if (tipo == ".LoLo" or tipo == ".HiHi") then
+		tagNameSplit = _tagName.Substring(0, largo-5);
+	elseif (tipo == "PV.Lo" or tipo == "PV.Hi") then
+		tagNameSplit = _tagName.Substring(0, largo-3);
+	else
+		tagNameSplit = _tagName;
+	endif;
+
+	
+endif;
