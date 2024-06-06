@@ -31,6 +31,8 @@ if _tagName <> "" then
 		procesoR = "Depuración\";
 	endif;
 
+///
+
 	if server == "1" then
 		if localidad == "01" then
 			localidadR = "Alto Hospicio\";			
