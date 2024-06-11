@@ -29,6 +29,8 @@ if _tagName <> "" then
 		procesoR = "Recolección\";
 	elseif proceso == "4" then
 		procesoR = "Depuración\";
+	elseif proceso == "10" then
+		procesoR = "NUEVO PROCESO CODIGO";
 	endif;
 
 ///
