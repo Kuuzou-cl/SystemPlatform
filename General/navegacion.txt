@@ -32,6 +32,8 @@ if _tagName <> "" then
 	elseif proceso == "9" then
 		procesoR = "OTRO PROCESO";
 
+	elseif proceso == "10" then
+		procesoR = "NUEVO PROCESO CODIGO";
 	endif;
 
 ///
